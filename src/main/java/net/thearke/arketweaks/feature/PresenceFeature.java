@@ -46,7 +46,7 @@ public class PresenceFeature implements IPCListener {
 
     private void richPresence() {
         RichPresence.Builder b = new RichPresence.Builder()
-                .setStartTimestamp(stamp)
+                .setStartTimestamp((ArkeUtil.getLoginTime() / 1000L))
                 .setLargeImage("arke", "The Arke | 1.18.2");
         MinecraftClient mc = MinecraftClient.getInstance();
         ServerInfo server = mc.getCurrentServerEntry();

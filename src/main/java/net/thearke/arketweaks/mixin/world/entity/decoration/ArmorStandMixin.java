@@ -13,6 +13,10 @@ public abstract class ArmorStandMixin extends LivingEntity {
     public ArmorStandMixin(EntityType<? extends ArmorStandEntity> entityType, World level) { super(entityType, level); }
 
     public Box getVisibilityBoundingBox() {
-        return ArkeUtil.connectedToServer() ? this.getVisibilityBoundingBox().expand(4.5) : super.getVisibilityBoundingBox();
+        try {
+            return ArkeUtil.connectedToServer() ? this.getBoundingBox().expand(4.5) : super.getVisibilityBoundingBox();
+        } catch (Throwable ignored) {
+        }
+        return null;
     }
 }

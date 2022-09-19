@@ -5,6 +5,7 @@ import com.jagrosh.discordipc.entities.DiscordBuild;
 import com.jagrosh.discordipc.exceptions.NoDiscordClientException;
 import net.fabricmc.api.ModInitializer;
 import net.thearke.arketweaks.feature.PresenceFeature;
+import net.thearke.arketweaks.util.ConnectionState;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
@@ -13,11 +14,13 @@ public class ArkeTweaks implements ModInitializer {
 
     // For PresenceFeature
     public static final IPCClient client = new IPCClient(1020745007667363860L);
+    private static final ConnectionState connectionState = new ConnectionState();
 
     @Override
     public void onInitialize() {
         LOGGER.info("Hello from ArkeTweaks!");
 
+        connectionState.activate();
         initPresenceFeature();
     }
 
