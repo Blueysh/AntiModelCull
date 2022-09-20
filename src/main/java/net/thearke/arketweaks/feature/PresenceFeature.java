@@ -60,7 +60,11 @@ public class PresenceFeature implements IPCListener {
                 ArkeTweaks.LOGGER.info("World " + mc.player.world.getRegistryKey().getValue());
                 if (!Objects.equals(mc.player.world.getRegistryKey().getValue().toString(), "minecraft:lobby")) {
                     World gameWorld = mc.player.world;
-                    b.setState("In a game with " + gameWorld.getPlayers().size() + " players");
+                    switch (gameWorld.getRegistryKey().getValue().toString().toLowerCase()) {
+                        case "minecraft:fantasy" -> b.setState("Playing Color Craze with " + gameWorld.getPlayers().size() + " others");
+                        case "minecraft:classic_maze" -> b.setState("Playing Retro Runner with " + gameWorld.getPlayers().size() + " others");
+                        default -> b.setState("In-game");
+                    }
                 } else {
                     b.setState("In a Lobby");
                 }
