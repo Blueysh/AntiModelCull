@@ -74,6 +74,11 @@ jar {
     from("LICENSE") {
         rename { "${it}_${project.archivesBaseName}" }
     }
+    manifest {
+        attributes(
+                "Class-Path": "/"
+        )
+    }
 }
 
 // configure the maven publication
