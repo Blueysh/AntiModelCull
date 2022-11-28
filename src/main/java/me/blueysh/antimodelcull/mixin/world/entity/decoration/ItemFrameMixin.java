@@ -1,11 +1,10 @@
-package net.thearke.arketweaks.mixin.world.entity.decoration;
+package me.blueysh.antimodelcull.mixin.world.entity.decoration;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.decoration.AbstractDecorationEntity;
 import net.minecraft.entity.decoration.ItemFrameEntity;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
-import net.thearke.arketweaks.util.ArkeUtil;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin({ItemFrameEntity.class})
@@ -14,7 +13,7 @@ public abstract class ItemFrameMixin extends AbstractDecorationEntity {
 
     public Box getVisibilityBoundingBox() {
         try {
-            return ArkeUtil.connectedToServer() ? this.getBoundingBox().expand(2.5) : super.getVisibilityBoundingBox();
+            this.getBoundingBox().expand(2.5);
         } catch (Throwable ignored) {
         }
         return null;

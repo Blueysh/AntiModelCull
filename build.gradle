@@ -26,10 +26,6 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    // DiscordIPC
-    //implementation "com.github.jagrosh:DiscordIPC:-SNAPSHOT"
-    shadow(implementation files('src/main/resources/DiscordIPC-0.5.jar'))
-
     // Lombok
     compileOnly "org.projectlombok:lombok:1.18.24"
     annotationProcessor "org.projectlombok:lombok:1.18.24"

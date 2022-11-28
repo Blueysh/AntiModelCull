@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "id": "arketweaks",
+  "id": "antimodelcull",
   "version": "${version}",
-  "name": "ArkeTweaks",
-  "description": "A utility mod for The Arke: Space Colony minigame server.",
-  "authors": ["itstotallyjan"],
+  "name": "AntiModelCull",
+  "description": "A simple mod that prevents large custom models from being culled.",
+  "authors": ["Blueysh"],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/arketweaks/icon.png",
+  "icon": "",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.thearke.arketweaks.ArkeTweaks"
+      "me.blueysh.antimodelcull.AntiModelCull"
     ]
   },
   "mixins": [
-    "ArkeTweaks.mixins.json"
+    "AntiModelCull.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.3",

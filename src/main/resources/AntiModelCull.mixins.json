@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.thearke.arketweaks.mixin",
+  "package": "me.blueysh.antimodelcull.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "world.entity.decoration.ArmorStandMixin",
